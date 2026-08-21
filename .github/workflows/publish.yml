@@ -1,0 +1,51 @@
+name: Generate and publish AI blog
+
+on:
+  workflow_dispatch:
+    inputs:
+      topic:
+        description: "Sujet optionnel pour le prochain article"
+        required: false
+  schedule:
+    - cron: "20 7 * * 1"
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - name: Generate article with OpenRouter
+        run: npm run generate
+        env:
+          OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
+          OPENROUTER_MODEL: ${{ vars.OPENROUTER_MODEL }}
+          BLOG_TOPIC: ${{ inputs.topic }}
+          SITE_URL: ${{ github.server_url }}/${{ github.repository }}
+      - name: Build static site
+        run: npm run build
+      - name: Commit generated article
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: "chore: add generated article"
+          file_pattern: posts/*.json
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: dist
+      - id: deployment
+        uses: actions/deploy-pages@v4
