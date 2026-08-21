@@ -1,0 +1,10 @@
+{
+  "title": "Bienvenue dans Pulse IA, le blog qui s'écrit presque tout seul",
+  "excerpt": "Découvrez la vision du projet: un magazine statique, élégant et automatisé, prêt pour GitHub Pages.",
+  "date": "2026-08-21",
+  "topic": "lancement du blog automatique",
+  "model": "seed",
+  "tags": ["IA", "GitHub Pages", "OpenRouter"],
+  "readTime": "3 min",
+  "html": "<p>Pulse IA est conçu pour publier régulièrement des articles sans transformer la création de contenu en corvée. Le site reste statique, rapide et gratuit à héberger sur GitHub Pages, tandis que la génération éditoriale est confiée à OpenRouter.</p><h2>Une approche simple</h2><p>Chaque article est stocké sous forme de fichier JSON. Le générateur construit ensuite des pages HTML propres, indexées et faciles à partager.</p><h2>Le rôle de l'humain</h2><p>L'automatisation accélère la production, mais la ligne éditoriale reste essentielle: choisir les thèmes, vérifier les publications et ajuster le ton permettent de garder une identité forte.</p>"
+}

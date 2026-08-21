@@ -1,0 +1,17 @@
+{
+  "siteTitle": "Pulse IA",
+  "siteTagline": "Un magazine automatique qui transforme l'actualité tech en articles élégants.",
+  "siteDescription": "Pulse IA publie automatiquement des articles générés avec OpenRouter, optimisés pour GitHub Pages.",
+  "author": "Jed Aloui",
+  "language": "fr",
+  "baseUrl": "",
+  "defaultModel": "openai/gpt-4o-mini",
+  "topics": [
+    "intelligence artificielle générative",
+    "automatisation pour créateurs",
+    "outils no-code et productivité",
+    "cybersécurité accessible",
+    "futur du web et GitHub Pages",
+    "marketing de contenu assisté par IA"
+  ]
+}

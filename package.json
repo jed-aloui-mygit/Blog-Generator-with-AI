@@ -1,0 +1,15 @@
+{
+  "name": "blog-generator-with-ai",
+  "version": "1.0.0",
+  "description": "Blog statique GitHub Pages alimenté par OpenRouter.",
+  "type": "module",
+  "scripts": {
+    "generate": "node scripts/generate-post.mjs",
+    "build": "node scripts/build-site.mjs",
+    "check": "node scripts/check-site.mjs"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "license": "MIT"
+}
